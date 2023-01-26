@@ -32,17 +32,3 @@ resource "azurerm_storage_account" "tfstorageacc" {
   tags = local.common_tags
 }
 
-/* resource "azurerm_storage_container" "tfcontainer" {
-  name                  = "app3"
-  storage_account_name  = azurerm_storage_account.tfstorageacc.name
-  container_access_type = "container"
-}
-
-resource "azurerm_storage_blob" "app3" {
-  for_each               = fileset(path.module, "../static/*")
-  name                   = trim(each.key, "$web/")
-  storage_account_name   = azurerm_storage_account.tfstorageacc.name
-  storage_container_name = azurerm_storage_container.tfcontainer.name
-  type                   = "Block"
-  source                 = each.key
-}*/
